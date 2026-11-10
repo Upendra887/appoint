@@ -1,0 +1,4 @@
+export interface PaymentProvider { createPayment(amount: number, reference: string): Promise<{ providerPaymentId: string; status: 'PENDING' | 'PAID' }>; verifyPayment(providerPaymentId: string): Promise<boolean>; }
+export interface NotificationProvider { sendBookingConfirmation(reference: string, phone: string): Promise<void>; sendQueueUpdate(reference: string, message: string): Promise<void>; }
+export class MockPaymentProvider implements PaymentProvider { async createPayment(_amount: number, reference: string) { return { providerPaymentId: `mock_${reference}`, status: 'PAID' as const }; } async verifyPayment(_providerPaymentId: string) { return true; } }
+export class MockNotificationProvider implements NotificationProvider { async sendBookingConfirmation(_reference: string, _phone: string) {} async sendQueueUpdate(_reference: string, _message: string) {} }

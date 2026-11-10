@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarogya 24/7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main class="app-shell">
+    <aside class="brand-rail">
+      <div class="brand-mark">✚</div>
+        <div><span class="eyebrow">AAROGYA</span><strong>24/7</strong></div>
+      <div class="rail-copy">Better access.<br>Better health.</div>
+      <div class="rail-line"></div>
+      <div class="rail-foot">Anantapur · AP<br>Patient care, connected.</div>
+    </aside>
+
+    <section class="phone-wrap">
+      <div class="phone-head"><span class="status-dot"></span><span>Patient portal</span><span class="head-date">25 Aug 2026</span></div>
+      <div id="app" class="phone-screen">
+        <section class="screen active" data-screen="welcome">
+          <div class="screen-top"><span class="tiny-label">WELCOME</span><span class="language">EN <span>/</span> TE</span></div>
+          <div class="welcome-hero"><div class="hero-icon">✚</div><p class="kicker">Care that comes closer</p><h1>Aarogya 24/7</h1><p class="telugu">ఆరోగ్య 24/7</p><p class="intro">Your trusted healthcare journey,<br>all in one place.</p></div>
+          <div class="auth-card"><label for="phone">Mobile number</label><div class="phone-input"><span class="flag">🇮🇳</span><span class="country-code">+91</span><input id="phone" value="98765 43210" aria-label="Mobile number"></div><button class="primary-btn" data-go="otp">Get OTP <span>OTP పొందండి</span><b>→</b></button><p class="terms">By continuing, you agree to our <u>Terms of Service</u><br>and <u>Privacy Policy</u>.</p></div>
+          <div class="trusted"><span>✓</span> Trusted by 12,000+ families in Anantapur</div>
+        </section>
+
+        <section class="screen" data-screen="otp">
+          <button class="back-btn" data-go="welcome">← <span>Back</span></button><div class="auth-heading"><div class="mini-logo">✚</div><p class="kicker">SECURE SIGN IN</p><h2>Verify your number</h2><p>We sent a 4-digit code to <b>+91 98765 43210</b></p></div><div class="otp-row"><input value="4" maxlength="1"><input value="8" maxlength="1"><input value="2" maxlength="1"><input class="active-box" value="" maxlength="1"></div><p class="resend">Code expires in <b>00:42</b></p><button class="text-btn">Resend OTP</button><button class="primary-btn otp-continue" data-go="home">Continue <span>కొనసాగించండి</span><b>→</b></button><div class="secure-note">⌁ &nbsp; Your data is encrypted and secure</div>
+        </section>
+
+        <section class="screen" data-screen="home">
+          <div class="home-header"><div><p class="kicker">GOOD MORNING</p><h2>Hello, Ramesh <span>✦</span></h2></div><button class="icon-btn">♧<i></i></button></div><div class="location"><span>⌖</span><div><small>YOUR LOCATION</small><strong>Anantapur City <span>/ అనంతపురం నగరం</span></strong></div><a>Change</a></div><div class="search"><span>⌕</span><input placeholder="Search doctors, hospitals, specialties..."><kbd>⌘ K</kbd></div><div class="section-row"><h3>Find care by specialty</h3><a>See all</a></div><div class="specialties"><button class="specialty cardio"><span>♥</span><b>Cardiology</b><small>24 doctors</small></button><button class="specialty ortho"><span>⌁</span><b>Orthopedics</b><small>18 doctors</small></button><button class="specialty general"><span>✚</span><b>General<br>Medicine</b><small>42 doctors</small></button><button class="specialty pedia"><span>♧</span><b>Pediatrics</b><small>16 doctors</small></button></div><div class="section-row hospital-title"><h3>Top hospitals near you</h3><a>View all</a></div><article class="hospital"><div class="hospital-photo"></div><div class="hospital-info"><div class="hospital-top"><span class="verified">✓ Aarogyasri accepted</span><span class="distance">1.8 km</span></div><h3>KIMS Saveera<br>Multispeciality Hospital</h3><p>Rudrampeta, Anantapur</p><div class="hospital-foot"><span>★ <b>4.7</b> &nbsp; 1,240 reviews</span><button data-go="doctor">View hospital →</button></div></div></article><nav class="bottom-nav"><button class="selected"><span>⌂</span>Home</button><button><span>▣</span>Appointments</button><button><span>♧</span>Emergency</button><button><span>◉</span>Profile</button></nav>
+        </section>
+
+        <section class="screen" data-screen="doctor">
+          <div class="doctor-head"><button class="back-btn" data-go="home">← <span>Back</span></button><span class="tiny-label">DOCTOR PROFILE</span><button class="icon-btn">♡</button></div><div class="doctor-card"><div class="avatar">SK</div><div class="doctor-copy"><h2>Dr. Suresh Kumar, MD</h2><p>Interventional Cardiologist</p><span class="specialty-tag">Cardiologist</span></div><div class="rating">★ 4.8</div></div><div class="doctor-meta"><span><b>18 yrs</b><small>Experience</small></span><span><b>₹400</b><small>OPD fee</small></span><span><b>4.9</b><small>Patient rating</small></span></div><div class="section-row date-heading"><h3>Choose appointment date</h3><a>August 2026</a></div><div class="date-tabs"><button class="date-tab selected"><b>25</b><small>TODAY</small></button><button class="date-tab"><b>26</b><small>TOMORROW</small></button><button class="date-tab"><b>◫</b><small>CUSTOM DATE</small></button></div><div class="slot-heading"><h3>Available time slots</h3><span>12 slots left</span></div><p class="slot-label">MORNING</p><div class="slots"><button class="slot unavailable">09:00 AM <span>⌑</span></button><button class="slot">09:30 AM</button><button class="slot selected-slot">10:30 AM</button><button class="slot">11:00 AM</button></div><p class="slot-label evening-label">EVENING</p><div class="slots"><button class="slot unavailable">05:00 PM <span>⌑</span></button><button class="slot">05:30 PM</button><button class="slot">06:00 PM</button><button class="slot unavailable">06:30 PM <span>⌑</span></button></div><div class="checkout"><div><small>TOTAL CONSULTATION FEE</small><strong>₹400 <span>OPD</span></strong></div><button class="primary-btn" data-go="pass">Confirm & Pay <span>నిర్ధారించండి & చెల్లించండి</span><b>→</b></button></div>
+        </section>
+
+        <section class="screen" data-screen="pass">
+          <div class="pass-header"><button class="back-btn" data-go="doctor">← <span>Back</span></button><span class="tiny-label">DIGITAL TOKEN PASS</span><button class="icon-btn">⋮</button></div><div class="confirmed"><div class="check">✓</div><p class="kicker">YOU'RE ALL SET</p><h2>Appointment<br><em>Confirmed!</em></h2><p>అపాయింట్‌మెంట్ ఖరారైంది!</p></div><article class="token-card"><div class="token-top"><div><small>BOOKING REFERENCE</small><strong>AAR-9842</strong></div><span class="pass-status">CONFIRMED</span></div><div class="perforation"><i></i><i></i></div><div class="token-body"><div><small>APPOINTMENT</small><strong>Today, 10:30 AM</strong><small class="token-gap">DOCTOR</small><strong>Dr. Suresh Kumar, MD</strong><small class="token-gap">HOSPITAL</small><strong>KIMS Saveera Multispeciality</strong><p>Rudrampeta, Anantapur, AP 515001</p><a>↗ Open in Google Maps</a></div><div class="qr"><div class="qr-pattern">▦</div><small>SCAN AT RECEPTION</small></div></div></article><div class="pass-actions"><button class="primary-btn">▣ Show at Reception Desk</button><button class="outline-btn">⌁ Share via WhatsApp</button></div><p class="help">Need help? <u>Contact support</u> · 1800-123-4567</p></section>
+      </div>
+    </section>
+    <div class="showcase-note"><span>01</span><div><b>One connected care journey</b><p>From first tap to the reception desk.</p></div></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

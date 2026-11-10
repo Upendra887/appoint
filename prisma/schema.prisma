@@ -1,0 +1,17 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+
+enum Role { PATIENT RECEPTIONIST DOCTOR HOSPITAL_ADMIN SUPER_ADMIN }
+enum AppointmentStatus { PENDING CONFIRMED CHECKED_IN WAITING IN_CONSULTATION COMPLETED SKIPPED CANCELLED NO_SHOW }
+enum AppointmentMode { EXACT TOKEN ARRIVAL_WINDOW }
+model User { id String @id @default(cuid()) phone String @unique name String? role Role @default(PATIENT) language String @default("en") createdAt DateTime @default(now()) updatedAt DateTime @updatedAt patient Patient? doctor Doctor? }
+model Patient { id String @id @default(cuid()) userId String @unique user User @relation(fields:[userId], references:[id]) dateOfBirth DateTime? gender String? emergencyContact String? appointments Appointment[] }
+model Hospital { id String @id @default(cuid()) name String description String? address String district String city String phone String? latitude Float? longitude Float? status String @default("PENDING") doctors Doctor[] appointments Appointment[] staff HospitalStaff[] createdAt DateTime @default(now()) }
+model HospitalStaff { id String @id @default(cuid()) userId String hospitalId String user User @relation(fields:[userId], references:[id]) hospital Hospital @relation(fields:[hospitalId], references:[id]) role Role }
+model Specialty { id String @id @default(cuid()) name String description String? doctors Doctor[] }
+model Doctor { id String @id @default(cuid()) userId String @unique hospitalId String specialtyId String qualification String experienceYears Int consultationFee Int averageConsultationMinutes Int @default(10) bio String? status String @default("AVAILABLE") user User @relation(fields:[userId], references:[id]) hospital Hospital @relation(fields:[hospitalId], references:[id]) specialty Specialty @relation(fields:[specialtyId], references:[id]) schedules DoctorSchedule[] appointments Appointment[] }
+model DoctorSchedule { id String @id @default(cuid()) doctorId String dayOfWeek Int startTime String endTime String slotDuration Int maxPatients Int appointmentQuota Int walkinQuota Int doctor Doctor @relation(fields:[doctorId], references:[id]) }
+model Appointment { id String @id @default(cuid()) bookingReference String @unique patientId String hospitalId String doctorId String appointmentDate DateTime appointmentTime String appointmentMode AppointmentMode tokenNumber Int? status AppointmentStatus @default(PENDING) paymentStatus String @default("PENDING") checkInTime DateTime? patient Patient @relation(fields:[patientId], references:[id]) hospital Hospital @relation(fields:[hospitalId], references:[id]) doctor Doctor @relation(fields:[doctorId], references:[id]) createdAt DateTime @default(now()) }
+model Payment { id String @id @default(cuid()) appointmentId String provider String providerPaymentId String? amount Int currency String @default("INR") status String createdAt DateTime @default(now()) appointment Appointment @relation(fields:[appointmentId], references:[id]) }
+model Notification { id String @id @default(cuid()) userId String title String message String type String isRead Boolean @default(false) createdAt DateTime @default(now()) }
+model QueueEvent { id String @id @default(cuid()) hospitalId String doctorId String appointmentId String? eventType String metadata String? createdAt DateTime @default(now()) }
